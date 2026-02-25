@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hamza | Mechanical Engineer Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=JetBrains+Mono&display=swap" rel="stylesheet">
+    
+    <style>
+        /* --- CSS (The Styling) --- */
+        :root {
+            --primary: #2c3e50; /* Industrial Navy */
+            --accent: #3498db;  /* Engineering Blue */
+            --bg: #f8f9fa;
+            --text: #333;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            background: var(--primary);
+            color: white;
+            padding: 80px 5%;
+            text-align: center;
+        }
+
+        .container { max-width: 1100px; margin: auto; padding: 40px 20px; }
+
+        nav {
+            background: white;
+            padding: 15px 5%;
+            display: flex;
+            justify-content: space-between;
+            position: sticky;
+            top: 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            z-index: 1000;
+        }
+
+        nav a { text-decoration: none; color: var(--primary); font-weight: bold; margin-left: 20px; }
+
+        .tech-stack span {
+            background: #e9ecef;
+            padding: 5px 12px;
+            border-radius: 4px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.9rem;
+            margin: 5px;
+            display: inline-block;
+        }
+
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .card {
+            background: white;
+            border-left: 5px solid var(--accent);
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            transition: 0.3s;
+        }
+
+        .card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
+
+        .card h3 { color: var(--primary); margin-bottom: 10px; }
+
+        .status-badge {
+            background: #d4edda;
+            color: #155724;
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+        }
+
+        footer { text-align: center; padding: 40px; color: #777; font-size: 0.9rem; }
+
+        /* Animation class */
+        .fade-in { opacity: 0; transform: translateY(20px); transition: 0.6s all ease-out; }
+        .appear { opacity: 1; transform: translateY(0); }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">HAMZA | ME</div>
+        <div class="links">
+            <a href="#projects">Projects</a>
+            <a href="#skills">Skills</a>
+            <a href="mailto:your-email@example.com">Contact</a>
+        </div>
+    </nav>
+
+    <header>
+        <h1>Mechanical Engineering Portfolio</h1>
+        <p>Specializing in Industrial Layouts, CAD Design, and Process Optimization</p>
+    </header>
+
+    <div class="container">
+        <section id="skills" class="fade-in">
+            <h2>Technical Skills</h2>
+            <div class="tech-stack">
+                <span>CATIA V5</span> <span>SolidWorks</span> <span>MATLAB</span> 
+                <span>Python</span> <span>Factory Layout</span> <span>Maintenance</span>
+            </div>
+        </section>
+
+        <hr style="margin: 40px 0; border: 0; border-top: 1px solid #ddd;">
+
+        <section id="projects">
+            <h2>Core Projects</h2>
+            <div class="project-grid">
+                
+                <div class="card fade-in">
+                    <h3>Factory Layout Optimization</h3>
+                    <p>Designed a new production line layout for a plastic injection machine project. Focused on minimizing material travel and maximizing safety zones.</p>
+                    <p><strong>Tools:</strong> CATIA V5, Industrial Engineering Principles</p>
+                </div>
+
+                <div class="card fade-in">
+                    <h3>OCP Internship <span class="status-badge">In Progress</span></h3>
+                    <p>Working on industrial maintenance and process engineering at OCP. Documenting workflows and identifying efficiency bottlenecks.</p>
+                    <p><strong>Location:</strong> Morocco (Started Feb 2026)</p>
+                </div>
+
+                <div class="card fade-in">
+                    <h3>Robotics Design</h3>
+                    <p>Modeling and simulating mechanical assemblies for automated systems.</p>
+                    <p><strong>Tools:</strong> Kinematic Analysis, 3D Rendering</p>
+                </div>
+
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Hamza - Mechanical Engineer. Built with HTML/CSS/JS.</p>
+    </footer>
+
+    <script>
+        /* --- JavaScript (The Interaction) --- */
+        // Scroll reveal animation
+        const observerOptions = { threshold: 0.1 };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('appear');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>
